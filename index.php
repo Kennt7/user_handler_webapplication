@@ -13,7 +13,7 @@
 <body>
 
 <div class="container">
-<h1>Üdvözellek az oldalon!</h1>
+
   <a href="login.php">Belépés</a>
   <a href="registration.php">Regisztráció</a>
 

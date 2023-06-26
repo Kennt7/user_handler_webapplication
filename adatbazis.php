@@ -18,7 +18,10 @@ try {
     website VARCHAR(255)
   )";
   $conn->exec($sql);
+
 } catch(PDOException $e) {
   echo "Connection failed: " . $e->getMessage();
 }
+
+
 ?>
