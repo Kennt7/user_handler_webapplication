@@ -3,7 +3,7 @@ require_once "../models/functions.php";
 
 session_start();
 
-// Ellenőrizzük, hogy létezik-e a loggedInUser objektum a SESSION-ben
+// Ellenőrizzük, hogy létezik-e a loggedInUser objektum a SESSION-be
 if (isset($_SESSION['loggedInUser'])) {
   // Elérjük a loggedInUser objektumot a SESSION-ből
   $loggedInUser = $_SESSION['loggedInUser'];
