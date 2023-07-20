@@ -1,15 +1,4 @@
-<?php
-session_start();
-require 'adatbazis.php';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $email = $_POST['email'];
-  $password = $_POST['password'];
-
-  // Validáció és bejelentkezés ellenőrzése
-}
-
-?>
 
 <!DOCTYPE html>
 <html>
@@ -18,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
   <h2>Bejelentkezés</h2>
-  <form method="POST" action="">
+  <form method="POST" action="..\controllers\signin-process.php">
     <label>Email:</label><br>
     <input type="email" name="email" required><br><br>
     <label>Jelszó:</label><br>

@@ -1,12 +1,16 @@
 <?php 
+
+
 // Kijelentkezés feldolgozása
 session_start();
+require '../models/functions.php';
+
 if (isset($_GET["logout"])) {
     // Kijelentkezés a session törlésével
     session_destroy();
 
     // Átirányítás a bejelentkezési oldalra
-    header("Location: login.php");
+    header("Location: ..\public\index.php");
     exit;
 }
 
@@ -20,7 +24,7 @@ if (isset($_SESSION["user"])) {
     echo "Üdvözöllek, $username!";
 
     // Kijelentkezési hivatkozás
-    echo '<br><a href="home.php?logout=1">Kijelentkezés</a>';
+    echo '<br><a href="../public/login.php">Kijelentkezés</a>';
 } else {
     echo "Üdvözöllek, vendég!";
 }
