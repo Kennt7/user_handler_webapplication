@@ -1,11 +1,11 @@
 <?php
 class User {
-    private $email;
-    private $password;
-    private $name;
-    private $maritalStatus;
-    private $birthdate;
-    private $website;
+    public $email;
+    public $password;
+    public $name;
+    public $maritalStatus;
+    public $birthdate;
+    public $website;
   
     public function __construct($email, $password, $name, $maritalStatus, $birthdate = null, $website = null) {
       $this->email = $email;
@@ -28,7 +28,7 @@ class User {
       return $this->name;
     }
   
-    public function getMaritalStatus() {
+    public function getmaritalStatus() {
       return $this->maritalStatus;
     }
   
@@ -44,7 +44,7 @@ class User {
       $this->name = $name;
     }
   
-    public function setMaritalStatus($maritalStatus) {
+    public function setmaritalStatus($maritalStatus) {
       $this->maritalStatus = $maritalStatus;
     }
   

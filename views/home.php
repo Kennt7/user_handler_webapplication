@@ -1,5 +1,5 @@
 <?php
-require_once("../controllers/login-process.php");
+require("../controllers/login-process.php");
  session_start();
 
 ?>
@@ -11,7 +11,7 @@ require_once("../controllers/login-process.php");
 </head>
 <body>
 <div class="container mt-3">
-<h1><?php print "Üdvözöllek,'.$loggedInUser->getName().'.'$loggedInUser->calculateAge()' az oldalon!<br />\n "?></h1>
+
 
 <ul class="nav justify-content-center">
   <li class="nav-item">

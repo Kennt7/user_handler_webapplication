@@ -3,6 +3,36 @@ require_once  '../models/database.php';
 require_once  '../models/User.php';
 
 
+
+function saveUserToDatabase($loggedInUser,$name,$maritalStatus,$birthdate,$website){
+  global $conn;
+
+  try {
+      $sql = "UPDATE users SET name = :name, password = :password, marital_status = :marital_status, birthdate = :birthdate, website = :website WHERE email = :email";
+      $stmt = $conn->prepare($sql);
+      $stmt->bindParam(':email',$loggedInUser->email);
+      $stmt-> bindParam(':password',$loggedInUser->password);
+      $stmt->bindParam(':name', $loggedInUser->$name);
+      $stmt->bindParam(':marital_status', $loggedInUser->$maritalStatus);
+      $stmt->bindParam(':birthdate', $loggedInUser->$birthdate);
+      $stmt->bindParam(':website', $loggedInUser->$website);
+     
+
+      $stmt->execute();
+
+      // Sikeres mentés esetén további műveletek, üzenetek stb. lehetnek itt
+      // ...
+
+      // Példa: Üzenet a sikeres mentésről
+      echo '<p style="color:green;">Adatok sikeresen frissítve az adatbázisban!</p>';
+  } catch (PDOException $e) {
+      // Hiba esetén hibaüzenet
+      echo '<p style="color:red;">Hiba történt az adatok mentésekor az adatbázisba!</p>';
+      // Logolhatjuk a hibát vagy további hibakezelést végezhetünk itt
+  }
+}
+
+
   function authenticateUser($email, $password) {
     global $conn;
   try {
@@ -33,7 +63,7 @@ require_once  '../models/User.php';
         $user['email'],
         $user['password'],
         $user['name'],
-        $user['maritalStatus'],
+        $user['marital_status'],
         $user['birthdate'],
         $user['website']
       );
@@ -51,5 +81,8 @@ require_once  '../models/User.php';
        echo '<p style="color:red;">Hibás felhasználónév vagy jelszó!</p>';
        return null;
     }
-  }
+  }//authenticateUser fv vége
+
+  
+  
 ?>

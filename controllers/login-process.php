@@ -9,12 +9,12 @@ if (isset($_SESSION['loggedInUser'])) {
   $loggedInUser = $_SESSION['loggedInUser'];
 
   // Fh nevének kiiratása
-  echo 'Üdvözöllek, ' . $loggedInUser->getName().  '.'.$loggedInUser->calculateAge().'!';
+  echo 'Üdvözöllek, ' . $loggedInUser->getName().  '!';
 
   
   session_write_close();
 } else {
- 
+ echo "Hiba a bejelentkezés során!";
   header('Location: ../views/login.php');
   exit();
 }
