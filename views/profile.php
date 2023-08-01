@@ -1,15 +1,6 @@
 <?php
 require_once '../controllers/login-process.php';
 require_once '../models/functions.php';
-
-
-
-
-
-
-
-
-
 ?>
 
 <!DOCTYPE html>
